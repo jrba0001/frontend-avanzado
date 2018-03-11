@@ -1,0 +1,33 @@
+<form novalidate id="comment-form" class="form-horizontal comment-form" role="form">
+    <div class="form-group">
+        <label for="nombre" class="col-lg-2 control-label">Nombre</label>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="apellidos" class="col-lg-2 control-label">Apellidos</label>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-4">
+            <input type="email" id="email" name="mail" required placeholder="Introduce tu email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="comentario" class="col-lg-2 control-label">Comentario</label>
+        <div class="col-lg-4">
+            <textarea type="email" id="comentario" name="comentario" cols="100" rows="10" required placeholder="Introduce comentario">
+            </textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-lg-3 col-lg-9">
+            <button disabled id="button" type="submit" class="button btn btn-success">Enviar comentario</button>
+        </div>
+    </div>
+</form>

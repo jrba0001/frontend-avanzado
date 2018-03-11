@@ -1,0 +1,24 @@
+// Estilos de los tags HTML genéricos
+// Estilos de elementos de formulario
+input {
+    &.error {
+        border: 1px solid $error-color;
+        color: $error-color;
+    }
+    &:focus {
+        outline-color: $outline-color;
+    }
+}
+
+button {
+    @extend input;
+    background-color: $button-background;
+    color: white;
+    transition: all $default-transition-time;
+    &:hover {
+        background: lighten($button-background, 10%);
+    }
+    &[disabled] {
+        opacity: 0.25;
+    }
+}
