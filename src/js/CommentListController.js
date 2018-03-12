@@ -1,6 +1,7 @@
 export class CommentListController {
 
     constructor(selector, commentsService, pubSub) {
+    	this.moment = moment;
         this.element = document.querySelector(selector);
         this.commentsService = commentsService;
         pubSub.subscribe('comment:created', (event, comment) => {
@@ -30,8 +31,11 @@ export class CommentListController {
             <td class="apellidos">${comment.apellidos} </td>
             <td class="email">${comment.email}</td>
             <td class="comentario">${comment.comentario}</td>
-            <td class="date">${comment.date}</td> </table>`
+            <td class="date">${this.moment(comment.date).format('DD-MM-YYYY')}</span>
+                                <span><i class="far fa-clock"></i> ${this.moment(comment.date).fromNow()}</td> </table>`
         }
+
+
         this.element.innerHTML = html;
     }
 
