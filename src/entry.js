@@ -7,6 +7,8 @@ import {
 import 'bootstrap';
 
 import './scss/style.scss';
+import moment from 'moment';
+
 
 import {
     AppController
@@ -36,9 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let commentsService = new CommentsService('http://localhost:3001/comment/');
 
-    let commentListController = new CommentListController(".comment-list", commentsService, PubSub);
+    let commentListController = new CommentListController(".comment-list", commentsService, PubSub, moment);
     commentListController.loadComment();
 
-    let formController = new FormController('.comment-form', commentsService, PubSub);
+    let formController = new FormController('.comment-form', commentsService, PubSub, moment);
 
 });

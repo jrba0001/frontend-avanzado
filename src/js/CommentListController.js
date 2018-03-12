@@ -1,7 +1,7 @@
 export class CommentListController {
 
-    constructor(selector, commentsService, pubSub) {
-    	this.moment = moment;
+    constructor(selector, commentsService, pubSub, moment) {
+        this.moment = moment;
         this.element = document.querySelector(selector);
         this.commentsService = commentsService;
         pubSub.subscribe('comment:created', (event, comment) => {

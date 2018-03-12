@@ -1,10 +1,12 @@
 export class FormController {
-    constructor(selector, commentsService, pubSub) {
+    constructor(selector, commentsService, pubSub, moment) {
         this.element = document.querySelector(selector);
         this.commentsService = commentsService;
         this.pubSub = pubSub;
         this.loading = false;
         this.addEventListeners();
+        this.moment = moment;
+
     }
 
     setLoading(loading) {
@@ -45,7 +47,9 @@ export class FormController {
             nombre: this.element.querySelector('#nombre').value,
             apellidos: this.element.querySelector('#apellidos').value,
             email: this.element.querySelector('#email').value,
-            comentario: this.element.querySelector('#comentario').value
+            comentario: this.element.querySelector('#comentario').value,
+            date: this.moment()
+
         }
     }
 
