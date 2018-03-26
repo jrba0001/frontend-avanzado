@@ -6,7 +6,6 @@ export class FormController {
         this.loading = false;
         this.addEventListeners();
         this.moment = moment;
-
     }
 
     setLoading(loading) {
@@ -38,6 +37,7 @@ export class FormController {
                 alert(`Se ha producido un error ${error}`);
             }).finally(() => {
                 this.setLoading(false);
+                location.reload();
             })
         });
     }
@@ -56,7 +56,6 @@ export class FormController {
     addInputListeners() {
         // en todos los input que hay en el formulario, los valido cuando se pierde el foco
         this.element.querySelectorAll('input').forEach(input => {
-
             input.addEventListener('blur', event => {
                 // event.target sería lo mismo que input en este caso
                 if (input.checkValidity() == false) {

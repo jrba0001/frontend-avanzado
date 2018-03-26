@@ -18,21 +18,21 @@ export class CommentListController {
         this.element.innerHTML = '<div class="error">Se ha producido un error</div>';
     }
 
-    showNoSongsMessage()  {
+    showNoMessage()  {
         this.element.innerHTML = '<div class="info">No hay ningún comentario</div>';
     }
 
-    renderSongs(comment) {
+    renderMessage(comment) {
         let html = '';
-        for (let comment of comment) {
+        for (let contenido of comment) {
 
             html += `<table class="table table-responsive">
-            <td class="nombre">${comment.nombre}</td>
-            <td class="apellidos">${comment.apellidos} </td>
-            <td class="email">${comment.email}</td>
-            <td class="comentario">${comment.comentario}</td>
-            <td class="date">${this.moment(comment.date).format('DD-MM-YYYY')}</span>
-                                <span><i class="far fa-clock"></i> ${this.moment(comment.date).fromNow()}</td> </table>`
+            <td class="nombre">${contenido.nombre}</td>
+            <td class="apellidos">${contenido.apellidos} </td>
+            <td class="email">${contenido.email}</td>
+            <td class="comentario">${contenido.comentario}</td>
+            <td class="date">${this.moment(contenido.date).format('DD-MM-YYYY')}</span>
+                                <span><i class="far fa-clock"></i> ${this.moment(contenido.date).fromNow()}</td> </table>`
         }
 
 
@@ -45,7 +45,7 @@ export class CommentListController {
             if (comment.length == 0) {
                 this.showNoSongsMessage();
             } else {
-                this.renderSongs(comment);
+                this.renderMessage(comment);
             }
         }).catch((error) => {
             console.error("ERROR RETRIEVING SONGS", error);

@@ -9,7 +9,6 @@ import 'bootstrap';
 import './scss/style.scss';
 import moment from 'moment';
 
-
 import {
     AppController
 } from './js/AppController';
@@ -26,15 +25,7 @@ import {
     PubSub
 } from 'pubsub-js';
 
-
-
-import {
-    HeaderController
-} from './js/HeaderController';
-
 document.addEventListener("DOMContentLoaded", () => {
-    let appController = new AppController("body", PubSub);
-    let headerController = new HeaderController(".body", appController);
 
     let commentsService = new CommentsService('http://localhost:3001/comment/');
 
@@ -42,5 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     commentListController.loadComment();
 
     let formController = new FormController('.comment-form', commentsService, PubSub, moment);
+
+
 
 });
