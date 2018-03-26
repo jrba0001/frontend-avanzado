@@ -1,5 +1,3 @@
-import css from './scss/style.scss';
-
 import {
     CommentsService
 } from './js/CommentsService';
