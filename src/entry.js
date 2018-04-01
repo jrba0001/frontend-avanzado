@@ -24,11 +24,11 @@ import {
 } from 'pubsub-js';
 
 document.addEventListener("DOMContentLoaded", () => {
-
     let commentsService = new CommentsService('http://localhost:3001/comment/');
-
     let commentListController = new CommentListController(".comment-list", commentsService, PubSub, moment);
     commentListController.loadComment();
+
+
 
     let formController = new FormController('.comment-form', commentsService, PubSub, moment);
 

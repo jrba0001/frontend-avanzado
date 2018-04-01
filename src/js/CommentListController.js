@@ -48,10 +48,8 @@ export class CommentListController {
                 this.renderMessage(comment);
             }
         }).catch((error) => {
-            console.error("ERROR RETRIEVING SONGS", error);
+            console.error("ERROR RETRIEVING MESSAGES", error);
             this.showErrorMessage();
         });
-
     }
-
 }
